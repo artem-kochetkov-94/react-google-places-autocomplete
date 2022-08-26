@@ -25,6 +25,9 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<GooglePlacesAutoc
     if (!placesService) return cb([]);
     if (value.length < minLengthAutocomplete) return cb([]);
 
+    console.log('GooglePlacesAutocomplete useDebouncedCallback value', value);
+    return cb([]);
+
     const autocompletionReq: AutocompletionRequest = { ...autocompletionRequest };
 
     placesService.getPlacePredictions(
