@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tintef/react-google-places-autocomplete.git"
+    "url": "git+https://github.com/artem-kochetkov-94/react-google-places-autocomplete.git"
   },
   "author": "Nicolás Tinte",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Tintef/react-google-places-autocomplete/issues"
+    "url": "https://github.com/artem-kochetkov-94/react-google-places-autocomplete/issues"
   },
-  "homepage": "https://github.com/Tintef/react-google-places-autocomplete#readme",
+  "homepage": "https://github.com/artem-kochetkov-94/react-google-places-autocomplete#readme",
   "keywords": [
     "react",
     "google-places",
