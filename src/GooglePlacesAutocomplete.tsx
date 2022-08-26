@@ -3,21 +3,21 @@ import AsyncSelect from 'react-select/async';
 import { OptionsType, OptionTypeBase } from 'react-select';
 import { useDebouncedCallback } from 'use-debounce';
 import GooglePlacesAutocompleteProps, {
-  AutocompletionRequest,
+  // AutocompletionRequest,
   GooglePlacesAutocompleteHandle,
 } from './GooglePlacesAutocomplete.types';
-import autocompletionRequestBuilder from './helpers/autocompletionRequestBuilder';
+// import autocompletionRequestBuilder from './helpers/autocompletionRequestBuilder';
 import { Loader } from '@googlemaps/js-api-loader';
 
 const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<GooglePlacesAutocompleteHandle, GooglePlacesAutocompleteProps> = ({
   apiKey = '',
   apiOptions = {},
-  autocompletionRequest = {},
+  // autocompletionRequest = {},
   debounce = 300,
   minLengthAutocomplete = 0,
   selectProps = {},
   onLoadFailed = console.error,
-  withSessionToken = false,
+  // withSessionToken = false,
 } : GooglePlacesAutocompleteProps, ref) : React.ReactElement => {
   const [placesService, setPlacesService] = useState<google.maps.places.AutocompleteService | undefined>(undefined);
   const [sessionToken, setSessionToken] = useState<google.maps.places.AutocompleteSessionToken | undefined>(undefined);
@@ -28,17 +28,17 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<GooglePlacesAutoc
     console.log('GooglePlacesAutocomplete useDebouncedCallback value', value);
     return cb([]);
 
-    const autocompletionReq: AutocompletionRequest = { ...autocompletionRequest };
+    // const autocompletionReq: AutocompletionRequest = { ...autocompletionRequest };
 
-    placesService.getPlacePredictions(
-      autocompletionRequestBuilder(
-        autocompletionReq,
-        value,
-        withSessionToken && sessionToken,
-      ), (suggestions) => {
-        cb((suggestions || []).map(suggestion => ({ label: suggestion.description, value: suggestion })));
-      },
-    );
+    // placesService.getPlacePredictions(
+    //   autocompletionRequestBuilder(
+    //     autocompletionReq,
+    //     value,
+    //     withSessionToken && sessionToken,
+    //   ), (suggestions) => {
+    //     cb((suggestions || []).map(suggestion => ({ label: suggestion.description, value: suggestion })));
+    //   },
+    // );
   }, debounce);
 
   const initializeService = () => {
